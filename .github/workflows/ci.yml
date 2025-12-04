@@ -1,0 +1,48 @@
+name: CI
+
+# Trigger workflow on push to main branch or pull requests targeting main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'uv'
+
+      - name: Install Dependencies with uv
+        run: |
+          uv --version
+          uv install --frozen --system
+
+      - name: Lint with Ruff
+        run: |
+          # Ruff will be installed by uv install --frozen --system
+          ruff check .
+          ruff format --check .
+
+      - name: Test with Pytest
+        run: |
+          # Pytest will be installed by uv install --frozen --system
+          pytest --cov=./ --cov-report=xml
+
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+          fail_ci_if_error: true
