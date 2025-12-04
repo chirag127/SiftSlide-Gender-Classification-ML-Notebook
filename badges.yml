@@ -1,0 +1,35 @@
+build:
+  ci:
+    - name: "Build Status"
+      image: "https://img.shields.io/github/actions/workflow/user/chirag127/SiftSlide-Gender-Classification-ML-Notebook/ci.yml?style=flat-square&logo=github"
+      url: "https://github.com/chirag127/SiftSlide-Gender-Classification-ML-Notebook/actions"
+
+quality:
+  coverage:
+    - name: "Code Coverage"
+      image: "https://img.shields.io/codecov/c/github/chirag127/SiftSlide-Gender-Classification-ML-Notebook?style=flat-square&logo=codecov"
+      url: "https://codecov.io/gh/chirag127/SiftSlide-Gender-Classification-ML-Notebook"
+  lint:
+    - name: "Lint & Format (Ruff)"
+      image: "https://img.shields.io/badge/lint--format-ruff-5A648B?style=flat-square&logo=ruff"
+      url: "https://github.com/charliermarsh/ruff"
+
+metadata:
+  license:
+    - name: "License (CC BY-NC 4.0)"
+      image: "https://img.shields.io/badge/License-CC BY-NC 4.0-blue?style=flat-square&logo=creativecommons"
+      url: "https://creativecommons.org/licenses/by-nc/4.0/"
+  stars:
+    - name: "GitHub Stars"
+      image: "https://img.shields.io/github/stars/chirag127/SiftSlide-Gender-Classification-ML-Notebook?style=flat-square&logo=github"
+      url: "https://github.com/chirag127/SiftSlide-Gender-Classification-ML-Notebook"
+
+tech_stack:
+  language:
+    - name: "Language (Jupyter Notebook)"
+      image: "https://img.shields.io/badge/Language-Jupyter%20Notebook-FFC107?style=flat-square&logo=jupyter"
+      url: "https://jupyter.org/"
+  framework:
+    - name: "Framework (Python ML)"
+      image: "https://img.shields.io/badge/Framework-Python%20ML-007396?style=flat-square&logo=python"
+      url: "https://www.python.org/"
